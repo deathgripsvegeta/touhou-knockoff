@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour
 {
-    public bool LeftShiftDown = false;
-    public float speed = 5;
+       public float speed = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +21,18 @@ public class MovePlayer : MonoBehaviour
 
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
         transform.Translate(Vector3.up * verticalInput * speed * Time.deltaTime); 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            LeftShiftDown = true;
-        }
-
+        SlowerMovement();
+       
     }
     public void SlowerMovement()
     {
-        if(LeftShiftDown == true)
+        if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 2;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+           speed = 5;
         }
     }
 }

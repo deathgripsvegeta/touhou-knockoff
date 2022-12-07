@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour
 {
-       public float speed = 5;
+    public float speed = 5;
+    public GameObject hitbox;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +30,12 @@ public class MovePlayer : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 2;
+            hitbox.gameObject.SetActive(true);
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
            speed = 5;
+           hitbox.gameObject.SetActive(false);
         }
     }
 }

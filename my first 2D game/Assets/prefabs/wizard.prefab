@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 30991661222883866}
   - component: {fileID: 30991661222883864}
   - component: {fileID: 5028333333589884772}
+  - component: {fileID: 1081379896}
   m_Layer: 0
   m_Name: wizard
   m_TagString: Untagged
@@ -122,3 +123,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0.025865644, y: 0.03140828}
   m_Size: {x: 0.46310085, y: 0.80506474}
   m_Direction: 0
+--- !u!114 &1081379896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30991661222883869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8df3062197726a46af05fcc1c01ed69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile1: {fileID: 5256682475187696869, guid: 784699ae1002a514b8f4de1406b2873a, type: 3}
+  projectile2: {fileID: 4389865569282239319, guid: 123607f211c16f64bb65f940172842b3, type: 3}
+  projectile3: {fileID: 3838952925188575012, guid: de4681d60fb25504cbc9a4e0ccb91815, type: 3}
+  projectile4: {fileID: 4863781840394802655, guid: 6a5a475c102355744846bfae6ae9ce69, type: 3}
+  spell1: {fileID: 8660641656166371139, guid: d1e914369d14e7a479665a566d213b7e, type: 3}
+  spell2: {fileID: 5827614967006732888, guid: c5e4a3ec57fe4264097804f011905fcd, type: 3}
+  spell3: {fileID: 7506765670279726043, guid: 46cbf7444ea86264f94830d093e205fe, type: 3}
+  SpellCardCount: 1
+  spawnPosX: 0
+  spawnPosY: 2

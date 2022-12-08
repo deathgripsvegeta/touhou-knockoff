@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(projectile1);
+        //Instantiate(projectile1);
     }
 
     // Update is called once per frame
@@ -26,4 +26,14 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
-}
+    public void RandomRotation()
+    {
+
+    }
+    public void Attack()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Random.rotation.this.gameObject;
+        Instantiate();
+    }
+}   

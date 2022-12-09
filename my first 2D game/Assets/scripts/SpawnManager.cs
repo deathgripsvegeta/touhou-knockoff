@@ -15,10 +15,12 @@ public class SpawnManager : MonoBehaviour
     public int SpellCardCount = 1;
     public float spawnPosX = 0;
     public float spawnPosY = 2;
+    public float RotatZ = 0;
+    public GameObject projectile;
     // Start is called before the first frame update
     void Start()
     {
-        //Instantiate(projectile1);
+        Instantiate(projectile1, GenerateSpawnRotation(), projectile1.transform.rotation);
     }
 
     // Update is called once per frame
@@ -26,14 +28,12 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
-    public void RandomRotation()
+    private Vector3 GenerateSpawnRotation()
     {
-
+        float RotatZ = Random.Range(0, 360);
+        Vector3 randomPos = new Vector3(RotatZ, 360);
+        return randomPos;
+        Vector2 randomPos = new Vector2(spawnPosX, spawnPosY);
     }
-    public void Attack()
-    {
-        yield return new WaitForSeconds(0.2f);
-        Random.rotation.this.gameObject;
-        Instantiate();
-    }
+   
 }   

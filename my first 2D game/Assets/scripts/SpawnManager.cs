@@ -1,26 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject projectile1;
-    public GameObject projectile2;
-    public GameObject projectile3;
-    public GameObject projectile4;
-    public GameObject spell1;
-    public GameObject spell2;
-    public GameObject spell3;
-    public int SpellCardCount = 1;
-    public float spawnPosX = 0;
-    public float spawnPosY = 2;
-    public float RotatZ = 0;
-    public GameObject projectile;
+    public bool IsGameActive = true;
+    public List<GameObject> projectile;
+    public float xPos = 0;
+    public float yPos = 2;
+
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(projectile1, GenerateSpawnRotation(), projectile1.transform.rotation);
+        IsGameActive = false;
+    }
+    public void StartGame()
+    {
+        IsGameActive = true;
+        StartCoroutine(SpawnTarget());
     }
 
     // Update is called once per frame
@@ -28,12 +25,15 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
-    private Vector3 GenerateSpawnRotation()
+    public int spawnPlace = 0,2;
+    IEnumerator SpawnTarget()
     {
-        float RotatZ = Random.Range(0, 360);
-        Vector3 randomPos = new Vector3(RotatZ, 360);
-        return randomPos;
-        Vector2 randomPos = new Vector2(spawnPosX, spawnPosY);
+        while(IsGameActive)
+        {
+            yield return new WaitForSeconds(1);
+            int Range = 2;
+            Instantiate(projectile[Range]);
+            
+        }
     }
-   
-}   
+}

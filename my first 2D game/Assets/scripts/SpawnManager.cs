@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             
-            Instantiate<GameObject>(projectile);
+            Instantiate<GameObject>(projectile[1]);
             
         }
     }

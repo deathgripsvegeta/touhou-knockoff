@@ -25,15 +25,16 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
-    public int spawnPlace = 0,2;
+    public int spawnPlace;
     IEnumerator SpawnTarget()
     {
         while(IsGameActive)
         {
             yield return new WaitForSeconds(1);
-            int Range = 2;
-            Instantiate(projectile[Range]);
+            
+            Instantiate<GameObject>(projectile);
             
         }
     }
+   
 }

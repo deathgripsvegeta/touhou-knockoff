@@ -6,20 +6,20 @@ public class SpawnManager : MonoBehaviour
 {
     public bool IsGameActive = true;
     public List<GameObject> projectile;
-    public float xPos = 0;
-    public float yPos = 2;
+        private Vector3 _spawnPos = new Vector3(0, 2, 0);
 
     // Start is called before the first frame update
     void Start()
     {
         IsGameActive = false;
+        StartGame();
     }
     public void StartGame()
     {
         IsGameActive = true;
         StartCoroutine(SpawnTarget());
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -31,8 +31,9 @@ public class SpawnManager : MonoBehaviour
         while(IsGameActive)
         {
             yield return new WaitForSeconds(1);
-            
-            Instantiate<GameObject>(projectile[1]);
+
+            int index = Random.Range(0, 3);
+            Instantiate<GameObject>(projectile[index]);
             
         }
     }

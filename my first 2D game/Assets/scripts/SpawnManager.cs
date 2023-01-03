@@ -19,6 +19,11 @@ public class SpawnManager : MonoBehaviour
         IsGameActive = true;
         StartCoroutine(SpawnTarget());
     }
+    void Awake() 
+    {
+        transform.Rotate(0.0f, 0.0f, Random.Range(10.0f, 160.0f));
+    }
+
     
     // Update is called once per frame
     void Update()
@@ -30,10 +35,9 @@ public class SpawnManager : MonoBehaviour
     {
         while(IsGameActive)
         {
-            yield return new WaitForSeconds(1);
-
+            yield return new WaitForSeconds(0.5f);
             int index = Random.Range(0, 3);
-            Instantiate<GameObject>(projectile[index]);
+            Instantiate(projectile[index], _spawnPos, Quaternion.Euler(0.0f, 0.0f, Random.Range(10.0f, 160.0f)));
             
         }
     }

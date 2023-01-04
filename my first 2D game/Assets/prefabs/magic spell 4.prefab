@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8660641656166371137}
   - component: {fileID: 8660641656166371138}
   - component: {fileID: 2577430542914678336}
+  - component: {fileID: -3784764717233309904}
+  - component: {fileID: -3103528254090414240}
   m_Layer: 0
   m_Name: magic spell 4
   m_TagString: Untagged
@@ -122,3 +124,39 @@ CircleCollider2D:
   m_Offset: {x: 0.0022004447, y: -0.05061134}
   serializedVersion: 2
   m_Radius: 0.13031705
+--- !u!114 &-3784764717233309904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660641656166371139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efe6834d8aca8b458945cf61acb5345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  otherPlayer: {fileID: 430053491857469241, guid: d6d2ce6dccb15cd45b72d9156c891483, type: 3}
+  turnSpeed: 5
+--- !u!50 &-3103528254090414240
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660641656166371139}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

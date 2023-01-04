@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  otherPlayer: {fileID: 430053491857469241, guid: d6d2ce6dccb15cd45b72d9156c891483, type: 3}
+  turnSpeed: 5
 --- !u!58 &5827614967006732892
 CircleCollider2D:
   m_ObjectHideFlags: 0

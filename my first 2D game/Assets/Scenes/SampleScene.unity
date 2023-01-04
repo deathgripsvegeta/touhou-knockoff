@@ -449,9 +449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGameActive: 1
   projectile:
-  - {fileID: 4389865569282239319, guid: 123607f211c16f64bb65f940172842b3, type: 3}
-  - {fileID: 3838952925188575012, guid: de4681d60fb25504cbc9a4e0ccb91815, type: 3}
-  - {fileID: 5256682475187696869, guid: 784699ae1002a514b8f4de1406b2873a, type: 3}
+  - {fileID: 7506765670279726043, guid: 46cbf7444ea86264f94830d093e205fe, type: 3}
+  - {fileID: 8660641656166371139, guid: d1e914369d14e7a479665a566d213b7e, type: 3}
+  - {fileID: 5827614967006732888, guid: c5e4a3ec57fe4264097804f011905fcd, type: 3}
   spawnPlace: 0
 --- !u!1001 &830253686
 PrefabInstance:

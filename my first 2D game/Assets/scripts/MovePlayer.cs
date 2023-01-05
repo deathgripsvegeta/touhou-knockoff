@@ -7,11 +7,12 @@ public class MovePlayer : MonoBehaviour
 {
     public float speed = 5;
     public GameObject hitbox;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,6 +24,8 @@ public class MovePlayer : MonoBehaviour
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
         transform.Translate(Vector3.up * verticalInput * speed * Time.deltaTime); 
         SlowerMovement();
+        Shoot();
+
        
     }
     public void SlowerMovement()
@@ -37,5 +40,18 @@ public class MovePlayer : MonoBehaviour
            speed = 5;
            hitbox.gameObject.SetActive(false);
         }
+
+    }
+    public void Shoot()
+    {
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            bullet.gameObject.SetActive(true);
+        }
+        if(Input.GetKeyUp(KeyCode.Z))
+        {
+            bullet.gameObject.SetActive(false);
+        }
+
     }
 }

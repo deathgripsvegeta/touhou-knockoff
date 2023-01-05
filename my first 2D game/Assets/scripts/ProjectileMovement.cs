@@ -25,14 +25,11 @@ public class ProjectileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 lookDirection = (_hael.transform.position - transform.position).normalized;
+        Vector2 lookDirection = (_hael.transform.position).normalized;
 
         _fireball.AddForce(lookDirection * speed);
         transform.Translate(Vector2.down * speed * Time.deltaTime);
-        Vector2 direction = otherPlayer.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, turnSpeed * Time.deltaTime);
+        
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {

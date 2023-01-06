@@ -7,7 +7,10 @@ public class MovePlayer : MonoBehaviour
 {
     public float speed = 5;
     public GameObject hitbox;
-    public GameObject bullet;
+    public GameObject bullets;
+    public GameObject slowBullets;
+    private bool _ismovementslow;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +37,14 @@ public class MovePlayer : MonoBehaviour
         {
             speed = 2;
             hitbox.gameObject.SetActive(true);
+            _ismovementslow = true;
+            
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
            speed = 5;
            hitbox.gameObject.SetActive(false);
+           _ismovementslow = false;
         }
 
     }
@@ -46,12 +52,18 @@ public class MovePlayer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            bullet.gameObject.SetActive(true);
+            bullets.gameObject.SetActive(true);
+            if(_ismovementslow)
+            {
+                slowBullets.gameObject.SetActive(true);
+            }
+
         }
         if(Input.GetKeyUp(KeyCode.Z))
         {
-            bullet.gameObject.SetActive(false);
+            bullets.gameObject.SetActive(false);
         }
 
     }
+    
 }

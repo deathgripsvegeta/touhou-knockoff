@@ -18,10 +18,7 @@ public class SpawnManager : MonoBehaviour
     {
         IsGameActive = true;
         StartCoroutine(SpawnTarget());
-    }
-    void Awake() 
-    {
-        transform.Rotate(0.0f, 0.0f, Random.Range(10.0f, 160.0f));
+        
     }
 
     
@@ -37,7 +34,7 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             int index = Random.Range(0, 3);
-            Instantiate(projectile[1]);
+            Instantiate(projectile[index]);
             
             
         }

@@ -1,27 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject canvas;
+    public GameObject Canvas;
+    public GameObject GameOverCanvas;
     public GameObject eventSystem;
-    public Button begin;
+    public GameObject wizard;
+    public Button Begin;
+    public Button Exit;
     public bool IsGameActive = true;
     // Start is called before the first frame update
     void Start()
     {
         IsGameActive = false;
-        canvas.gameObject.SetActive(true);
+        Canvas.gameObject.SetActive(true);
         eventSystem.gameObject.SetActive(false);
-        begin = GetComponent<Button>();
+        
+    }
+     public void GameOver()
+    {
+        IsGameActive = false;
+        eventSystem.gameObject.SetActive(true);
+        GameOverCanvas.gameObject.SetActive(true);
     }
     public void StartGame()
     {
-        canvas.gameObject.SetActive(false);
+        Canvas.gameObject.SetActive(false);
         eventSystem.gameObject.SetActive(true);
+        wizard.gameObject.SetActive(true);
         IsGameActive = true;
     }
     

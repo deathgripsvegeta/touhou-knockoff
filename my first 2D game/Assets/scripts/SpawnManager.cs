@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public bool IsGameActive = true;
+    
     public List<GameObject> projectile;
         private Vector3 _spawnPos = new Vector3(0, 2, 0);
 
@@ -32,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     {
         while(IsGameActive)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             int index = Random.Range(0, 3);
             Instantiate(projectile[index]);
             

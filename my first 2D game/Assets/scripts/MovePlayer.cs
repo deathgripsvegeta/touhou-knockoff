@@ -9,6 +9,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject hitbox;
     public GameObject bullets;
     public GameObject slowBullets;
+    private bool _isPlayerDead = false;
 
 
 
@@ -57,7 +58,15 @@ public class MovePlayer : MonoBehaviour
         {
             bullets.gameObject.SetActive(false);
         }
-
+        
     }
-    
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("bullet"))
+        {
+            Destroy(this.gameObject);
+            _isPlayerDead = true;
+
+        }
+    }
 }
